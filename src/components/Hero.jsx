@@ -22,7 +22,7 @@ const Hero = () => {
                     </p>
                 </section>
 
-                <a href='#capsuleSearch' className='mt-auto mx-auto mb-4'>
+                <a href='#capsules' className='mt-auto mx-auto mb-4'>
                     <BsFillArrowDownCircleFill className='animate-bounce text-3xl text-black' />
                 </a>
             </header>
