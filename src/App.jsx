@@ -1,14 +1,12 @@
 import './App.css';
 import Hero from './components/Hero';
-import SearchForm from './components/SearchForm';
+import Main from './components/Main';
 
 function App() {
     return (
         <div className='font-robotoSlab'>
             <Hero />
-            <main>
-                <SearchForm />
-            </main>
+            <Main />
         </div>
     );
 }
