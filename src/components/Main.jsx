@@ -1,7 +1,11 @@
+import { useState } from 'react';
 import { SearchProvider } from './SearchContext';
 import SearchForm from './SearchForm';
 import { BsFillRocketTakeoffFill } from 'react-icons/bs';
+
 const Main = () => {
+    const [fetchedData, setFetchedData] = useState([]);
+    console.log(fetchedData);
     return (
         <main
             className='h-screen text-white bg-gradient-to-b from-zinc-900 to-gray-950'
@@ -12,7 +16,7 @@ const Main = () => {
                     <BsFillRocketTakeoffFill className='inline ml-2 animate-pulse' />
                 </h2>
                 <SearchProvider>
-                    <SearchForm />
+                    <SearchForm setData={setFetchedData} />
                 </SearchProvider>
             </div>
         </main>
