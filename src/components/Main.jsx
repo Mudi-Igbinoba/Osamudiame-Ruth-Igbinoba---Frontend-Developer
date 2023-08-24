@@ -1,3 +1,4 @@
+import { SearchProvider } from './SearchContext';
 import SearchForm from './SearchForm';
 import { BsFillRocketTakeoffFill } from 'react-icons/bs';
 const Main = () => {
@@ -10,8 +11,9 @@ const Main = () => {
                     Unveil the Secrets: Search for Capsules{' '}
                     <BsFillRocketTakeoffFill className='inline ml-2 animate-pulse' />
                 </h2>
-
-                <SearchForm />
+                <SearchProvider>
+                    <SearchForm />
+                </SearchProvider>
             </div>
         </main>
     );
