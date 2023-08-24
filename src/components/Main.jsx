@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { SearchProvider } from './SearchContext';
 import SearchForm from './SearchForm';
 import { BsFillRocketTakeoffFill } from 'react-icons/bs';
+import DataGrid from './DataGrid';
 
 const Main = () => {
     const [fetchedData, setFetchedData] = useState([]);
@@ -17,6 +18,7 @@ const Main = () => {
                 </h2>
                 <SearchProvider>
                     <SearchForm setData={setFetchedData} />
+                    <DataGrid data={fetchedData} />
                 </SearchProvider>
             </div>
         </main>
