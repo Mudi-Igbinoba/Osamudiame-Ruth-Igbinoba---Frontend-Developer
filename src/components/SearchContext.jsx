@@ -3,19 +3,19 @@ import { createContext, useContext, useState } from 'react';
 const SearchContext = createContext();
 
 export const useSearchContext = () => {
-  return useContext(SearchContext);
+    return useContext(SearchContext);
 };
 
 export const SearchProvider = ({ children }) => {
-  const [searchFilters, setSearchFilters] = useState({
-    status: '',
-    originalLaunch: '',
-    type: '',
-  });
+    const [searchFilters, setSearchFilters] = useState({
+        status: '',
+        landings: '',
+        type: '',
+    });
 
-  return (
-    <SearchContext.Provider value={{ searchFilters, setSearchFilters }}>
-      {children}
-    </SearchContext.Provider>
-  );
+    return (
+        <SearchContext.Provider value={{ searchFilters, setSearchFilters }}>
+            {children}
+        </SearchContext.Provider>
+    );
 };
