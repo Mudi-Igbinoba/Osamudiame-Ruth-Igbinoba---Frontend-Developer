@@ -1,6 +1,7 @@
 import Moment from 'react-moment';
 import Modal from 'react-modal';
 import { BsXCircleFill } from 'react-icons/bs';
+import PropTypes from 'prop-types';
 
 Modal.setAppElement('#root');
 
@@ -20,7 +21,6 @@ const CapsuleModal = ({ selectedItem, setSelectedItem }) => {
                 },
                 content: {
                     backgroundColor: '#111',
-
                     border: '1px solid #fff',
                     borderRadius: '8px,',
                     transition: '300ms',
@@ -132,6 +132,11 @@ const CapsuleModal = ({ selectedItem, setSelectedItem }) => {
             )}
         </Modal>
     );
+};
+
+CapsuleModal.propTypes = {
+    selectedItem: PropTypes.object,
+    setSelectedItem: PropTypes.func,
 };
 
 export default CapsuleModal;
