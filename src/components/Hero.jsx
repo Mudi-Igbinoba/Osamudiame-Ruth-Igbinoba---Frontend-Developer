@@ -5,7 +5,7 @@ import { BsFillArrowDownCircleFill } from 'react-icons/bs';
 const Hero = () => {
     return (
         <div
-            className='h-screen text-white bg-top bg-cover bg-no-repeat'
+            className='h-screen text-white bg-top bg-cover bg-no-repeat bg-fixed'
             style={{ backgroundImage: `url(${rocketHero})` }}>
             <header className='container sm:px-5 px-3 mx-auto h-full flex flex-col'>
                 <Nav />
