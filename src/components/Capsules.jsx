@@ -4,9 +4,11 @@ import SearchForm from './SearchForm';
 import { BsFillRocketTakeoffFill } from 'react-icons/bs';
 import DataGrid from './DataGrid';
 
-const Main = () => {
+const Capsules = () => {
     const [fetchedData, setFetchedData] = useState([]);
-    console.log(fetchedData);
+    const [currentPage, setCurrentPage] = useState(0);
+    const [loading, setLoading] = useState(true);
+
     return (
         <main
             className='text-white bg-gradient-to-b from-zinc-900 to-gray-950'
@@ -17,12 +19,21 @@ const Main = () => {
                     <BsFillRocketTakeoffFill className='inline ml-2 animate-pulse' />
                 </h2>
                 <SearchProvider>
-                    <SearchForm setData={setFetchedData} />
-                    <DataGrid data={fetchedData} />
+                    <SearchForm
+                        setData={setFetchedData}
+                        setCurrentPage={setCurrentPage}
+                        setLoading={setLoading}
+                    />
+                    <DataGrid
+                        data={fetchedData}
+                        currentPage={currentPage}
+                        setCurrentPage={setCurrentPage}
+                        loading={loading}
+                    />
                 </SearchProvider>
             </div>
         </main>
     );
 };
 
-export default Main;
+export default Capsules;
