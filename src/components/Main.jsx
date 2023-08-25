@@ -9,7 +9,7 @@ const Main = () => {
     console.log(fetchedData);
     return (
         <main
-            className='h-screen text-white bg-gradient-to-b from-zinc-900 to-gray-950'
+            className='text-white bg-gradient-to-b from-zinc-900 to-gray-950'
             id='capsules'>
             <div className='h-full container sm:px-5 px-3 sm:py-8 py-5 mx-auto'>
                 <h2 className='font-orbitron font-semibold md:text-3xl sm:text-2xl mb-5 text-center'>
