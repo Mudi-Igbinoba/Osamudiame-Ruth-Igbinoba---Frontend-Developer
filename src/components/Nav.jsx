@@ -2,7 +2,7 @@ import Logo from '../assets/img/logo.png';
 
 const Nav = () => {
     return (
-        <nav className='xl:py-8 sm:py-5 py-4 sticky top-0'>
+        <nav className='xl:py-8 sm:py-5 py-4'>
             <ul className=''>
                 <li>
                     <a href='/'>
