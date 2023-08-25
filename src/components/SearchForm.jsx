@@ -2,8 +2,9 @@ import { HiOutlineStatusOnline, HiOutlineClock } from 'react-icons/hi';
 import { VscTypeHierarchySub } from 'react-icons/vsc';
 import { useSearchContext } from './SearchContext';
 import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
-const SearchForm = ({ setData }) => {
+const SearchForm = ({ setData, setCurrentPage, setLoading }) => {
     const { searchFilters, setSearchFilters } = useSearchContext();
 
     const [formData, setFormData] = useState({
@@ -22,7 +23,14 @@ const SearchForm = ({ setData }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+
         setSearchFilters(formData); // Update the context on form submit
+        setFormData({
+            status: '',
+            landings: '',
+            type: '',
+        });
+        setCurrentPage(0);
     };
 
     useEffect(() => {
@@ -39,8 +47,9 @@ const SearchForm = ({ setData }) => {
             .catch((error) => {
                 // Handle errors
                 console.error(error);
-            });
-    }, [searchFilters, setData]);
+            })
+            .finally(() => setLoading(false));
+    }, [searchFilters, setData, setLoading]);
 
     return (
         <section className='py-5'>
@@ -126,4 +135,9 @@ const SearchForm = ({ setData }) => {
     );
 };
 
+SearchForm.propTypes = {
+    setData: PropTypes.func,
+    setCurrentPage: PropTypes.func,
+    setLoading: PropTypes.func,
+};
 export default SearchForm;
